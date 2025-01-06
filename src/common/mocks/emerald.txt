@@ -1,0 +1,13 @@
+Item Class: Jewels
+Rarity: Rare
+Spirit Spark
+Emerald
+--------
+Item Level: 82
+--------
+15% increased Elemental Ailment Threshold
+16% increased Damage while you have an active Charm
+Herald Skills deal 25% increased Damage
+13% increased Daze Buildup
+--------
+Place into an allocated Jewel Socket on the Passive Skill Tree. Right click to remove from the Socket.

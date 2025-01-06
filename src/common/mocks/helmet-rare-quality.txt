@@ -1,0 +1,24 @@
+Item Class: Helmets
+Rarity: Rare
+Armageddon Brow
+Expert Feathered Tiara
+--------
+Quality: +20% (augmented)
+Energy Shield: 355 (augmented)
+--------
+Requirements:
+Level: 75
+Int: 139
+--------
+Sockets: S
+--------
+Item Level: 75
+--------
+20% increased Armour, Evasion and Energy Shield (rune)
+--------
++42 to maximum Energy Shield
+87% increased Energy Shield
++63 to maximum Mana
+8% increased Rarity of Items found
++30 to Intelligence
++35% to Lightning Resistance

@@ -1,22 +1,25 @@
-import { Damage } from './damage';
-import { Quarterstaff } from '../quarterstaff';
+import { Damage, DamageType } from './damage';
+import { readFileSync } from 'fs';
+import { MartialWeapon } from './martial-weapon';
 
 describe('Damage', () => {
-  const testWeapon = new Quarterstaff({ criticalChance: 10, attacksPerSecond: 1.4, quality: 0 });
-
   it('should calculate lightning dps', () => {
-    const damage = new Damage({ min: 13, max: 54, type: 'lightning', weapon: testWeapon });
-    expect(damage.getDPS()).toBe(46.9);
+    const damage = new Damage({ min: 13, max: 54, type: DamageType.Lightning });
+    expect(damage.getDPS()).toBe(33.5);
   });
 
   it('should calculate physical DPS', () => {
-    const damage = new Damage({ min: 43, max: 72, type: 'physical', weapon: testWeapon });
+    const damage = new Damage({ min: 43, max: 72, type: DamageType.Physical });
 
-    expect(damage.getDPS()).toBe(80.5);
+    expect(damage.getDPS()).toBe(57.5);
   });
 
   it('should calculate DPS with critical hit chance', () => {
-    const damage = new Damage({ min: 29, max: 60, type: 'physical', weapon: testWeapon });
+    const weaponString = readFileSync('./src/common/mocks/weapon-normal-quality.txt', 'utf-8');
+
+    const weapon = new MartialWeapon({ item: weaponString });
+    
+    const damage = new Damage({ min: 29, max: 60, type: DamageType.Physical, weapon });
 
     expect(damage.getCriticalDPS()).toBe(68.53);
   });

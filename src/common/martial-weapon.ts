@@ -1,10 +1,10 @@
-import { Weapon } from '../weapon';
+import { Weapon } from '../weapons/weapon';
 import { Damage, damageFamily, DamageFamily, damageType, DamageType } from './damage';
+import ItemParser from './item-parser';
 
 export type MartialWeaponConstructor = {
-  criticalChance: number;
-  attacksPerSecond: number;
-  quality: number;
+  item: string;
+  parser?: typeof ItemParser;
 };
 
 export class MartialWeapon extends Weapon {
@@ -25,10 +25,11 @@ export class MartialWeapon extends Weapon {
     {} as Record<DamageFamily, Damage[]>,
   );
 
-  constructor({ criticalChance, attacksPerSecond, quality }: MartialWeaponConstructor) {
-    super({ quality });
-    this.attacksPerSecond = attacksPerSecond;
-    this.criticalChance = criticalChance;
+  constructor({ item, parser }: MartialWeaponConstructor) {
+    super({ item, parser });
+
+    this.attacksPerSecond = this.parser.getAttacksPerSecond(item);
+    this.criticalChance = this.parser.getCriticalChance(item);
   }
 
   setDamage(min: number, max: number, type: DamageType) {
@@ -63,6 +64,4 @@ export class MartialWeapon extends Weapon {
       return total + damage.getDPS(this.quality);
     }, 0);
   }
-
-  parseWeapon() {}
 }

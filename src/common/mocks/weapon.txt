@@ -1,0 +1,26 @@
+Item Class: Quarterstaves
+Rarity: Rare
+Rage Song
+Expert Crackling Quarterstaff
+--------
+Lightning Damage: 46-360 (augmented)
+Critical Hit Chance: 10.00%
+Attacks per Second: 1.77 (augmented)
+--------
+Requirements:
+Level: 78
+Dex: 165
+Int: 64
+--------
+Sockets: S S
+--------
+Item Level: 79
+--------
+60% increased Elemental Damage with Attacks (rune)
+--------
+128% increased Physical Damage
+Adds 3 to 188 Lightning Damage
+77% increased Elemental Damage with Attacks
+26% increased Attack Speed
+Leeches 5.44% of Physical Damage as Life
+Gain 19 Mana per Enemy Killed

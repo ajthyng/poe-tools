@@ -1,0 +1,14 @@
+Item Class: Rings
+Rarity: Magic
+Elusory Gold Ring of Warmth
+--------
+Requirements:
+Level: 52
+--------
+Item Level: 77
+--------
+15% increased Rarity of Items found (implicit)
+--------
++165 to Evasion Rating
+10% increased Mana Regeneration Rate
+5% increased Light Radius

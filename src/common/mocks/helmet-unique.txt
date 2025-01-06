@@ -1,0 +1,19 @@
+Item Class: Helmets
+Rarity: Unique
+Radiant Grief
+Lace Hood
+--------
+Evasion Rating: 125 (augmented)
+--------
+Requirements:
+Level: 16
+Dex: 30
+--------
+Item Level: 79
+--------
+86% increased Evasion Rating
++20% to Fire Resistance
+30% increased Light Radius
+Enemies in your Presence are Ignited as though dealt 100 Base Fire Damage
+--------
+No man burns alone.

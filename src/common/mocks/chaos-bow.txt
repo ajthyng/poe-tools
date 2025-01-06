@@ -1,0 +1,16 @@
+Item Class: Bows
+Rarity: Magic
+Glinting Advanced Cultist Bow
+--------
+Physical Damage: 1-4 (augmented)
+Chaos Damage: 41-69 (augmented)
+Critical Hit Chance: 5.00%
+Attacks per Second: 1.20
+--------
+Requirements:
+Level: 59
+Dex: 135
+--------
+Item Level: 78
+--------
+Adds 1 to 4 Physical Damage

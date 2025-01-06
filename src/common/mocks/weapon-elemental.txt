@@ -1,0 +1,33 @@
+Item Class: Two Hand Maces
+Rarity: Rare
+Sorrow Thresher
+Expert Oak Greathammer
+--------
+Quality: +20% (augmented)
+Physical Damage: 412-699 (augmented)
+Elemental Damage: 38-57 (augmented), 2-60 (augmented)
+Critical Hit Chance: 5.00%
+Attacks per Second: 1.05
+--------
+Requirements:
+Level: 77
+Str: 148 (augmented) (unmet)
+--------
+Sockets: S S
+--------
+Item Level: 79
+--------
+Adds 2 to 60 Lightning Damage (enchant)
+--------
+40% increased Physical Damage (rune)
+--------
+Causes 35% increased Stun Buildup (implicit)
+--------
+92% increased Physical Damage
+Adds 54 to 77 Physical Damage
+Adds 38 to 57 Fire Damage
++22% to Critical Damage Bonus
+30% reduced Attribute Requirements
+Causes 63% increased Stun Buildup
+--------
+Corrupted

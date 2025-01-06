@@ -1,0 +1,28 @@
+Item Class: Bows
+Rarity: Rare
+Eagle Wing
+Advanced Cultist Bow
+--------
+Elemental Damage: 7-11 (augmented), 15-21 (augmented), 1-20 (augmented)
+Chaos Damage: 41-69 (augmented)
+Critical Hit Chance: 5.00%
+Attacks per Second: 1.33 (augmented)
+--------
+Requirements:
+Level: 59
+Dex: 135
+--------
+Sockets: S S S
+--------
+Item Level: 79
+--------
+Adds 7 to 11 Fire Damage (rune)
+Adds 6 to 10 Cold Damage (rune)
+Adds 1 to 20 Lightning Damage (rune)
+--------
+Adds 9 to 11 Cold Damage
+11% increased Attack Speed
+Leeches 6.12% of Physical Damage as Life
+Gain 26 Life per Enemy Killed
+--------
+Corrupted

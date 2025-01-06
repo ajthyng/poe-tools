@@ -1,0 +1,17 @@
+Item Class: Quarterstaves
+Rarity: Normal
+Superior Barrier Quarterstaff
+--------
+Quality: +5% (augmented)
+Physical Damage: 35-58 (augmented)
+Critical Hit Chance: 10.00%
+Attacks per Second: 1.40
+--------
+Requirements:
+Level: 37
+Dex: 67
+Int: 27
+--------
+Item Level: 76
+--------
++15% to Block chance (implicit)

@@ -1,40 +1,68 @@
 import { MartialWeapon } from './martial-weapon';
 
-export const damageType = ['lightning', 'fire', 'cold', 'chaos', 'physical'] as const;
-export const damageFamily = ['elemental', 'chaos', 'physical'] as const;
+export enum DamageType {
+  Lightning = 'lightning',
+  Fire = 'fire',
+  Cold = 'cold',
+  Chaos = 'chaos',
+  Physical = 'physical',
+  name = 'DamageType',
+}
 
-export type DamageType = (typeof damageType)[number];
-export type DamageFamily = (typeof damageFamily)[number];
+export enum DamageFamily {
+  Elemental = 'elemental',
+  Chaos = 'chaos',
+  Physical = 'physical',
+}
 
-export const DamageFamilies: Record<DamageType, { family: DamageFamily; affectedByQuality: boolean }> = {
-  chaos: { family: 'chaos', affectedByQuality: false },
-  cold: { family: 'elemental', affectedByQuality: false },
-  fire: { family: 'elemental', affectedByQuality: false },
-  lightning: { family: 'elemental', affectedByQuality: false },
-  physical: { family: 'physical', affectedByQuality: true },
+export const damageFamily = Object.values(DamageFamily);
+export const damageType = Object.values(DamageType);
+
+export const DamageFamilies: Record<DamageType | string, { family: DamageFamily; affectedByQuality: boolean }> = {
+  chaos: { family: DamageFamily.Chaos, affectedByQuality: false },
+  cold: { family: DamageFamily.Elemental, affectedByQuality: false },
+  fire: { family: DamageFamily.Elemental, affectedByQuality: false },
+  lightning: { family: DamageFamily.Elemental, affectedByQuality: false },
+  physical: { family: DamageFamily.Physical, affectedByQuality: true },
 } as const;
 
-export type DamageConstructor = {
-  min: number;
-  max: number;
-  type: DamageType;
-  weapon: MartialWeapon;
-};
+export type DamageConstructor =
+  | {
+      min: number;
+      max: number;
+      range?: never;
+      type: DamageType;
+      weapon?: MartialWeapon;
+    }
+  | { min?: never; max?: never; range: string; type: DamageType; weapon?: MartialWeapon };
 
 export class Damage {
-  declare readonly min: number;
-  declare readonly max: number;
+  declare min: number;
+  declare max: number;
   declare readonly type: DamageType;
   declare private readonly _damageFamily: (typeof DamageFamilies)[DamageType];
-  declare readonly weapon: MartialWeapon;
+  declare readonly weapon?: MartialWeapon;
 
-  constructor({ min, max, type, weapon }: DamageConstructor) {
-    this.min = min;
-    this.max = max;
+  constructor({ min, max, range, type, weapon }: DamageConstructor) {
+    if (range !== null && range !== undefined) {
+      this.setDamageRange(range);
+    } else {
+      this.setDamage(min, max);
+    }
+
     this.type = type;
 
     this._damageFamily = DamageFamilies[type];
     this.weapon = weapon;
+  }
+
+  setDamageRange(range: string) {
+    [this.min, this.max] = range.split('-').map((range) => +range);
+  }
+
+  setDamage(min: number, max: number) {
+    this.min = min;
+    this.max = max;
   }
 
   private roundDPS(dps: number) {
@@ -45,7 +73,7 @@ export class Damage {
     const qualityMultiplier = 1 + (quality ?? 0) / 100;
 
     const averageDamage = (Math.round(this.min * qualityMultiplier) + Math.round(this.max * qualityMultiplier)) / 2;
-    const dps = averageDamage * this.weapon.attacksPerSecond;
+    const dps = averageDamage * (this.weapon?.attacksPerSecond ?? 1);
     return this.roundDPS(dps);
   }
 
@@ -56,7 +84,7 @@ export class Damage {
    */
   getCriticalDPS(criticalBonus: number = 200) {
     const baseDPS = this.getBaseDPS();
-    const totalDPS = baseDPS * (1 + (this.weapon.criticalChance * (criticalBonus - 100)) / 10000);
+    const totalDPS = baseDPS * (1 + ((this.weapon?.criticalChance ?? 0) * (criticalBonus - 100)) / 10000);
     return this.roundDPS(totalDPS);
   }
 

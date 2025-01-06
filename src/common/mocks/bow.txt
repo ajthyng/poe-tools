@@ -1,0 +1,24 @@
+Item Class: Bows
+Rarity: Rare
+Apocalypse Nock
+Expert Dualstring Bow
+--------
+Physical Damage: 101-188 (augmented)
+Elemental Damage: 21-36 (augmented), 2-39 (augmented)
+Critical Hit Chance: 5.00%
+Attacks per Second: 1.20
+--------
+Requirements:
+Level: 78
+Dex: 148 (augmented)
+--------
+Item Level: 78
+--------
+Bow Attacks fire an additional Arrow (implicit)
+--------
+158% increased Physical Damage
+Adds 21 to 36 Cold Damage
+Adds 2 to 39 Lightning Damage
+30% reduced Attribute Requirements
++22 to Dexterity
+Leeches 8.07% of Physical Damage as Life
